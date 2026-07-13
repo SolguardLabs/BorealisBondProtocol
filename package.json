@@ -1,0 +1,24 @@
+{
+    "name": "borealis-bond-protocol",
+    "version": "0.1.0",
+    "private": true,
+    "description": "TypeScript DeFi bond protocol CTF with vesting, reserve accounting and indexed emissions.",
+    "type": "module",
+    "scripts": {
+        "build": "tsc --noEmit",
+        "test": "npm run build && node --import tsx --test \"tests/node/*.test.ts\"",
+        "test:ts": "node --import tsx --test \"tests/node/*.test.ts\"",
+        "ci": "npm run format:check && npm test",
+        "fmt": "prettier --config .prettierrc --ignore-path .prettierignore --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "@types/node": "^22.7.5",
+        "prettier": "^3.3.3",
+        "tsx": "^4.19.2",
+        "typescript": "^5.6.3"
+    },
+    "engines": {
+        "node": ">=20"
+    }
+}
