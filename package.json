@@ -1,24 +1,27 @@
 {
     "name": "borealis-bond-protocol",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "private": true,
-    "description": "TypeScript DeFi bond protocol CTF with vesting, reserve accounting and indexed emissions.",
+    "description": "Protocolo TypeScript de bonos, vesting, reservas, emision y control de riesgo.",
     "type": "module",
     "scripts": {
         "build": "tsc --noEmit",
-        "test": "npm run build && node --import tsx --test \"tests/node/*.test.ts\"",
-        "test:ts": "node --import tsx --test \"tests/node/*.test.ts\"",
-        "ci": "npm run format:check && npm test",
+        "test": "npm run build && node --import tsx --test \"tests/node/*.test.ts\" \"tests/repository/*.test.ts\" \"sdk/*.test.ts\"",
+        "test:ts": "node --import tsx --test \"tests/node/*.test.ts\" \"sdk/*.test.ts\"",
+        "ci": "npm run format:check && npm test && npm run verify:repo",
         "fmt": "prettier --config .prettierrc --ignore-path .prettierignore --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "verify:repo": "node scripts/verify-repository.mjs",
+        "loc": "node scripts/check-loc.mjs"
     },
     "devDependencies": {
-        "@types/node": "^22.7.5",
-        "prettier": "^3.3.3",
-        "tsx": "^4.19.2",
-        "typescript": "^5.6.3"
+        "@types/node": "24.13.3",
+        "prettier": "3.9.5",
+        "tsx": "4.23.0",
+        "typescript": "5.9.3"
     },
     "engines": {
-        "node": ">=20"
+        "bun": ">=1.3.14",
+        "node": ">=24"
     }
 }

@@ -28,5 +28,5 @@ package-lock.json
 .DS_Store
 Thumbs.db
 
-# Documentación interna
-vulnerability.md
+# Validaciones privadas efímeras
+/tests/private/
