@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -euo pipefail
+$ErrorActionPreference = "Stop"
 
 bun install --frozen-lockfile
 bun run ci
